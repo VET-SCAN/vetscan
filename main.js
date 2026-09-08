@@ -171,6 +171,14 @@ document.addEventListener('DOMContentLoaded', () => {
    - Bucle visual continuo mediante clonación de tarjetas
    ========================================================================== */
 
+
+function navigateToServiceFromCard(link) {
+  const card = link.closest('a.service-card');
+  const href = card?.getAttribute('href') || link.getAttribute('href');
+  if (!href) return;
+  window.location.href = href;
+}
+
 function initServicesCarousel() {
   const carousel = document.querySelector('[data-services-carousel]');
   if (!carousel) return;
@@ -346,7 +354,7 @@ function initServicesCarousel() {
       const href = card?.getAttribute('href');
       if (href) {
         event.preventDefault();
-        window.location.assign(href);
+        window.location.href = href;
       }
     });
   });
@@ -388,6 +396,93 @@ if (document.readyState === 'loading') {
    - Selector de Servicios / Productos
    - Mantiene la navegación global y demás funcionalidades existentes
    ========================================================================== */
+
+
+function initServicesGalleryCarousel(){
+  const gallery = document.querySelector('[data-services-gallery]');
+  if (!gallery) return;
+  const viewport = gallery.querySelector('[data-gallery-viewport]');
+  const track = gallery.querySelector('[data-gallery-track]');
+  const prev = gallery.querySelector('[data-gallery-prev]');
+  const next = gallery.querySelector('[data-gallery-next]');
+  if (!viewport || !track) return;
+
+  const cards = Array.from(track.querySelectorAll('[data-gallery-card]'));
+  if (!cards.length) return;
+
+  const updateButtons = () => {
+    const max = Math.max(0, viewport.scrollWidth - viewport.clientWidth - 2);
+    if (prev) prev.disabled = viewport.scrollLeft <= 2;
+    if (next) next.disabled = viewport.scrollLeft >= max;
+  };
+
+  const step = () => {
+    const first = cards[0];
+    if (!first) return Math.max(260, viewport.clientWidth * .72);
+    const gap = parseFloat(getComputedStyle(track).gap || '16') || 16;
+    return first.getBoundingClientRect().width + gap;
+  };
+
+  prev?.addEventListener('click', () => viewport.scrollBy({left: -step(), behavior:'smooth'}));
+  next?.addEventListener('click', () => viewport.scrollBy({left: step(), behavior:'smooth'}));
+  viewport.addEventListener('scroll', updateButtons, {passive:true});
+  window.addEventListener('resize', updateButtons);
+
+  let dragging = false;
+  let moved = false;
+  let startX = 0;
+  let startScroll = 0;
+
+  viewport.addEventListener('pointerdown', (event) => {
+    if (event.pointerType === 'mouse' && event.button !== 0) return;
+    dragging = true;
+    moved = false;
+    startX = event.clientX;
+    startScroll = viewport.scrollLeft;
+    viewport.classList.add('is-dragging');
+    // Keep the native mouse click target on the card. Pointer capture is only
+    // needed for touch/pen dragging, otherwise some touch-capable PCs can
+    // retarget the click to the gallery viewport.
+    if (event.pointerType !== 'mouse') viewport.setPointerCapture?.(event.pointerId);
+  });
+
+  viewport.addEventListener('pointermove', (event) => {
+    if (!dragging) return;
+    const dx = event.clientX - startX;
+    if (Math.abs(dx) > 4) moved = true;
+    viewport.scrollLeft = startScroll - dx;
+  });
+
+  const endDrag = (event) => {
+    const wasMoved = moved;
+    dragging = false;
+    viewport.classList.remove('is-dragging');
+    if (event?.pointerType !== 'mouse') viewport.releasePointerCapture?.(event.pointerId);
+    if (wasMoved) {
+      viewport.dataset.justDragged = 'true';
+      window.setTimeout(() => { delete viewport.dataset.justDragged; }, 120);
+    }
+  };
+  viewport.addEventListener('pointerup', endDrag);
+  viewport.addEventListener('pointercancel', endDrag);
+
+  viewport.addEventListener('wheel', (event) => {
+    if (Math.abs(event.deltaY) > Math.abs(event.deltaX) && viewport.scrollWidth > viewport.clientWidth) {
+      viewport.scrollLeft += event.deltaY;
+      event.preventDefault();
+    }
+  }, {passive:false});
+
+  // The lightbox checks data-just-dragged so a swipe never opens a card.
+  // Do not intercept ordinary mouse clicks here.
+  cards.forEach((card) => {
+    card.addEventListener('pointerup', () => {
+      if (!dragging) return;
+    }, { passive: true });
+  });
+
+  updateButtons();
+}
 
 function initServicesPage() {
   const gallery = document.querySelector('[data-services-gallery]');
@@ -434,11 +529,8 @@ function initServicesPage() {
     card.setAttribute('tabindex', '0');
     card.addEventListener('keydown', (event) => {
       if (event.key === 'Enter' || event.key === ' ') {
-        const action = card.querySelector('.catalog-card__action');
-        if (action) {
-          event.preventDefault();
-          action.click();
-        }
+        event.preventDefault();
+        card.click();
       }
     });
   });
@@ -448,6 +540,12 @@ if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', initServicesPage);
 } else {
   initServicesPage();
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initServicesGalleryCarousel);
+} else {
+  initServicesGalleryCarousel();
 }
 
 
@@ -673,7 +771,7 @@ function initServicesLightbox() {
   const tag = document.getElementById('lightboxTag');
   const description = document.getElementById('lightboxDescription');
   const features = document.getElementById('lightboxFeatures');
-  const price = document.getElementById('lightboxPrice');
+  const quote = document.getElementById('lightboxQuote');
   const action = document.getElementById('lightboxAction');
   const visual = document.getElementById('lightboxVisual');
   const index = document.getElementById('lightboxIndex');
@@ -694,7 +792,6 @@ function initServicesLightbox() {
     tag: card.querySelector('.catalog-card__tag')?.textContent.trim() || 'Servicio',
     description: card.querySelector('.catalog-card__body > p')?.textContent.trim() || '',
     features: Array.from(card.querySelectorAll('.catalog-card__features li')).map(item => item.textContent.trim()),
-    price: card.querySelector('.catalog-card__bottom strong')?.textContent.trim() || 'Por confirmar',
     actionHref: card.querySelector('.catalog-card__action')?.getAttribute('href') || '#',
     visualHTML: card.querySelector('.catalog-card__visual')?.innerHTML || '',
     visualClass: card.querySelector('.catalog-card__visual')?.className || ''
@@ -707,7 +804,11 @@ function initServicesLightbox() {
     if (title) title.textContent = data.title;
     if (tag) tag.textContent = data.tag;
     if (description) description.textContent = data.description;
-    if (price) price.textContent = data.price;
+    if (quote) {
+      const quoteMessage = encodeURIComponent(`Hola VET-SCAN, quiero cotizar el servicio: ${data.title}.`);
+      quote.href = `https://wa.me/573181577351?text=${quoteMessage}`;
+      quote.setAttribute('aria-label', `Cotizar ${data.title}`);
+    }
     if (action) {
       action.href = data.actionHref;
       action.setAttribute('aria-label', `Agendar ${data.title}`);
@@ -753,8 +854,11 @@ function initServicesLightbox() {
   cards.forEach((card, cardIndex) => {
     card.setAttribute('role', 'button');
     card.setAttribute('aria-label', `Ver ${getCardData(card).title} en detalle`);
+    // Pointer events make desktop mouse, pen and touch interactions consistent.
+    // A recent horizontal swipe is ignored so the gallery remains draggable.
     card.addEventListener('click', (event) => {
       if (event.target.closest('.catalog-card__action')) return;
+      if (gallery.querySelector('[data-gallery-viewport]')?.dataset.justDragged === 'true') return;
       event.preventDefault();
       open(cardIndex, card);
     });
@@ -793,13 +897,12 @@ function initServicesLightbox() {
   // ?service=... abre directamente el servicio seleccionado desde index.html.
   const requestedService = new URLSearchParams(window.location.search).get('service');
   const legacyServiceMap = {
-    // Alias heredado para enlaces antiguos; no se muestra en la interfaz.
     ecografia: 'ecografia-abdominal',
-    consulta: 'ecografia-abdominal',
-    vacunacion: 'ecografia-abdominal',
-    desparasitacion: 'ecografia-abdominal',
-    laboratorio: 'ecografia-control',
-    presion: 'presiones',
+    consulta: 'consulta-domicilio',
+    vacunacion: 'vacunacion',
+    laboratorio: 'laboratorio',
+    desparasitacion: 'procedimientos-basicos',
+    presion: 'consulta-domicilio',
     escaner: 'ecografia-abdominal'
   };
   const selectedService = legacyServiceMap[requestedService] || requestedService;

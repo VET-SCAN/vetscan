@@ -1,17 +1,21 @@
-# VET-SCAN
+# VET-SCAN — Paso 28
 
-Sitio web estático listo para GitHub Pages.
+## Cambios
+- Nueva fotografía realista y diferenciada para cada uno de los cinco servicios.
+- Consulta a domicilio con veterinario masculino y mascota pequeña.
+- Ecografía abdominal con escena de ecografía en mascota.
+- Vacunación con veterinario masculino y cachorro.
+- Laboratorio con toma profesional de muestra.
+- Procedimientos básicos con atención a gato.
+- Tarjetas de servicios compactas, iguales y sin solapamientos de contenido.
+- Descripciones e ítems ajustados para lectura completa.
+- Galería horizontal con desplazamiento en anchos que no permiten mostrar las cinco tarjetas.
+- Mantiene el visor/lightbox, botones de Cotizar y Agendar, navegación con flechas, teclado y toque.
 
 ## Estructura
-
-- `index.html` — página principal
-- `servicios.html` — galería de servicios
-- `css/styles.css` — estilos principales
-- `js/main.js` — interacciones y navegación
-- `assets/` — imágenes del sitio
-- `assets/services/` — imágenes de servicios de ecografía
-- `CNAME` — dominio personalizado: `vetscan.com.co`
-
-## Importante
-
-Todos los recursos usan rutas relativas, por lo que la estructura de carpetas debe conservarse al subir el proyecto a GitHub. No renombres `assets`, `services`, `css` o `js`, ni los archivos dentro de ellas.
+- index.html
+- servicios.html
+- css/styles.css
+- js/main.js
+- assets/services/*.jpg
+- assets/branding/*

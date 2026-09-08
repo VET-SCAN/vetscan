@@ -4280,3 +4280,1415 @@ h3,h4{letter-spacing:-0.015em;}
   .footer__bottom{padding-inline:14px;}
   .whatsapp-float{width:64px;height:64px;right:14px;bottom:18px;}
 }
+
+
+/* ========================================================================
+   PASO 22 · SERVICIOS ACTUALIZADOS · LOGO REAL · COTIZACIÓN · ECÓGRAFO
+   ======================================================================== */
+:root{
+  --violet-700:#6D00D9;
+  --violet-500:#8424F0;
+  --violet-900:#32005F;
+  --violet-400:#A463F3;
+  --violet-300:#D1B7FA;
+  --violet-200:#E9D9FC;
+  --violet-100:#F3E9FD;
+  --violet-50:#F9F4FE;
+}
+
+.logo{display:inline-flex;align-items:center;justify-content:center;}
+.logo__image{display:block;width:58px;height:58px;object-fit:contain;border-radius:50%;background:#fff;box-shadow:0 7px 22px rgba(70,0,120,.08);}
+.logo--light .logo__image{background:rgba(255,255,255,.96);}
+
+/* El escaneo continúa animándose, ahora sobre una fotografía profesional del ecógrafo. */
+.scan-panel__body{position:relative;overflow:hidden;min-height:280px;}
+.scan-panel__image-wrap{position:relative;width:100%;height:100%;min-height:280px;border-radius:18px;overflow:hidden;background:#160c25;}
+.scan-panel__photo{display:block;width:100%;height:100%;min-height:280px;object-fit:cover;object-position:center;filter:saturate(.98) contrast(1.04);}
+.scan-panel__image-wrap::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(109,0,217,.20),transparent 45%,rgba(34,182,168,.10));pointer-events:none;}
+.scan-panel__scan-beam{position:absolute;left:4%;right:4%;top:-8%;height:3px;background:linear-gradient(90deg,transparent,var(--teal-500),#86FFF2,var(--teal-500),transparent);box-shadow:0 0 16px rgba(34,182,168,.72);animation:scanBeam 2.6s ease-in-out infinite;z-index:3;}
+@keyframes scanBeam{0%{transform:translateY(0);opacity:.45}50%{transform:translateY(280px);opacity:1}100%{transform:translateY(0);opacity:.45}}
+
+/* Visor: el cierre y flechas se integran en la composición sin tapar la lectura. */
+.service-lightbox__dialog{overflow:hidden;position:relative;}
+.service-lightbox__content{position:relative;isolation:isolate;}
+.service-lightbox__content::after{content:"";position:absolute;right:18px;bottom:18px;width:150px;height:150px;background:url('../assets/branding/logo.jpeg') center/contain no-repeat;opacity:.045;pointer-events:none;z-index:-1;}
+.service-lightbox__close{width:38px;height:38px;top:12px;right:12px;background:rgba(255,255,255,.82);backdrop-filter:blur(10px);border:1px solid rgba(109,0,217,.10);box-shadow:0 8px 22px rgba(24,8,52,.10);}
+.service-lightbox__arrow{width:44px;height:44px;background:rgba(255,255,255,.84);backdrop-filter:blur(10px);box-shadow:0 10px 24px rgba(24,8,52,.12);border:1px solid rgba(109,0,217,.10);}
+.service-lightbox__arrow--prev{left:14px;}
+.service-lightbox__arrow--next{right:14px;}
+.service-lightbox__bottom{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:stretch;}
+.service-lightbox__bottom .btn{width:100%;min-height:48px;display:flex;align-items:center;justify-content:center;border-radius:14px;font-weight:800;}
+.service-lightbox__quote{background:#fff;color:var(--violet-700);border:1.5px solid var(--violet-400);box-shadow:0 7px 18px rgba(109,0,217,.06);}
+.service-lightbox__quote:hover{background:var(--violet-50);}
+
+/* Tarjetas del catálogo: imagen dominante + contenido compacto y respirable. */
+.services-page .catalog-card__visual--photo{height:250px;min-height:250px;flex:0 0 250px;background:var(--violet-50);}
+.services-page .catalog-card__image{object-fit:cover;width:100%;height:100%;display:block;}
+.services-page .catalog-card{height:454px;min-height:454px;}
+.services-page .catalog-card__body{height:204px;min-height:204px;display:flex;flex-direction:column;padding:13px 16px 12px;overflow:hidden;}
+.services-page .catalog-card h3{font-size:1.06rem;line-height:1.12;margin-bottom:4px;}
+.services-page .catalog-card p{font-size:.73rem;line-height:1.34;margin-bottom:5px;}
+.services-page .catalog-card__features{gap:5px;margin-top:5px;}
+.services-page .catalog-card__features li{font-size:.70rem;line-height:1.2;}
+.services-page .catalog-card__bottom{margin-top:auto;border-top:1px solid var(--gray-300);padding-top:9px;}
+.services-page .catalog-card__action{min-height:40px;width:100%;border-radius:12px;}
+
+@media (max-width:860px){
+  .header__inner{position:relative;min-height:72px;}
+  .header .logo{position:absolute;left:50%;transform:translateX(-50%);}
+  .header .logo__image{width:60px;height:60px;}
+  .services-page .catalog-card{height:520px;min-height:520px;}
+  .services-page .catalog-card__visual--photo{height:300px;min-height:300px;flex-basis:300px;}
+  .services-page .catalog-card__body{height:220px;min-height:220px;padding:14px 16px 13px;}
+  .service-lightbox__dialog{max-height:calc(100vh - 20px);}
+  .service-lightbox__bottom{grid-template-columns:1fr;gap:10px;}
+  .service-lightbox__arrow{width:40px;height:40px;top:240px;}
+  .service-lightbox__arrow--prev{left:12px;}
+  .service-lightbox__arrow--next{right:12px;}
+  .service-lightbox__close{top:10px;right:10px;}
+}
+
+@media (max-width:560px){
+  .logo__image{width:56px;height:56px;}
+  .services-page .catalog-card{height:540px;min-height:540px;}
+  .services-page .catalog-card__visual--photo{height:318px;min-height:318px;flex-basis:318px;}
+  .services-page .catalog-card__body{height:222px;min-height:222px;padding:13px 15px 12px;}
+  .services-page .catalog-card h3{font-size:1.08rem;}
+  .services-page .catalog-card p{font-size:.76rem;}
+  .services-page .catalog-card__features li{font-size:.72rem;}
+  .service-lightbox__content{padding:23px 18px 20px;}
+  .service-lightbox__content h2{font-size:1.62rem;}
+  .service-lightbox__arrow{top:calc(260px - 22px);}
+}
+
+
+/* Ajuste final del visor: cotización arriba y agendamiento debajo, en una composición clara. */
+.service-lightbox__bottom{grid-template-columns:1fr;gap:10px;}
+.service-lightbox__bottom .btn{min-height:48px;}
+.service-lightbox__quote{display:flex;gap:9px;align-items:center;justify-content:center;}
+.service-lightbox__quote svg{flex:0 0 auto;}
+.service-lightbox__content::after{right:16px;bottom:12px;width:128px;height:128px;}
+
+/* Servicios actualizados: cinco categorías con imágenes claramente diferenciadas. */
+.services-page .services-gallery__track{grid-template-columns:repeat(3,minmax(0,1fr));}
+@media (max-width:1024px){
+  .services-page .services-gallery__track{grid-template-columns:repeat(2,minmax(0,1fr));}
+}
+@media (max-width:700px){
+  .services-page .services-gallery__track{grid-template-columns:1fr;}
+  .services-page .catalog-card{height:536px;min-height:536px;}
+  .services-page .catalog-card__visual--photo{height:318px;min-height:318px;flex-basis:318px;}
+  .services-page .catalog-card__body{height:218px;min-height:218px;}
+}
+
+/* ========================================================================
+   PASO 23 · IDENTIDAD, IMÁGENES REALISTAS Y AJUSTES FINALES
+   ======================================================================== */
+
+/* Identidad del encabezado: logo real + nombre textual */
+.header .logo{
+  gap:12px;
+}
+.logo__image{
+  width:54px;
+  height:54px;
+  flex:0 0 54px;
+  object-fit:contain;
+  border-radius:50%;
+  background:#fff;
+}
+.logo__word{
+  display:inline-flex;
+  align-items:baseline;
+  white-space:nowrap;
+  font-family:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  font-size:1.48rem;
+  line-height:1;
+  font-weight:800;
+  letter-spacing:-.045em;
+}
+.logo__word span{color:var(--violet-900);}
+.logo__word b{color:var(--violet-700);font-weight:800;}
+
+.logo--light .logo__word span,
+.logo--light .logo__word b{color:#fff;}
+
+/* El footer se siente centrado y no pegado a los bordes en escritorio. */
+.footer__brand{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+}
+.footer__brand .logo{
+  justify-content:center;
+}
+.footer__brand .logo__image{
+  width:50px;
+  height:50px;
+  flex-basis:50px;
+}
+.footer__brand .logo__word{
+  font-size:1.18rem;
+}
+.footer__brand p{
+  max-width:34ch;
+}
+.footer__copy{
+  max-width:36ch;
+}
+
+@media (min-width:861px){
+  .footer__bottom{
+    width:min(var(--container-w),calc(100% - 64px));
+    margin-inline:auto;
+    padding-inline:0;
+  }
+
+  /* Los indicadores suben visualmente para alinearse con el bloque textual. */
+  #nosotros .about__stats{
+    transform:translateY(-48px);
+  }
+}
+
+@media (max-width:860px){
+  .header .logo__image{
+    width:48px;
+    height:48px;
+    flex-basis:48px;
+  }
+  .header .logo__word{
+    font-size:1.12rem;
+  }
+  .header__inner > .logo{
+    gap:9px;
+  }
+  #nosotros .about__stats{
+    transform:none;
+  }
+  .footer__brand{
+    align-items:center;
+    text-align:center;
+  }
+  .footer__brand .logo__word{
+    font-size:1.08rem;
+  }
+  .footer__brand .logo__image{
+    width:46px;
+    height:46px;
+    flex-basis:46px;
+  }
+}
+
+/* Formulario: labels e inputs del par de selección/ubicación con la misma altura. */
+@media (min-width:861px){
+  .booking-form__row--compact{
+    align-items:stretch;
+  }
+  .booking-form__row--compact .field{
+    display:flex;
+    flex-direction:column;
+    min-width:0;
+  }
+  .booking-form__row--compact .field label{
+    min-height:44px;
+    display:flex;
+    align-items:flex-start;
+  }
+  .booking-form__row--compact .field input,
+  .booking-form__row--compact .field select{
+    min-height:48px;
+    margin-top:auto;
+  }
+}
+
+/* Galería: fotografía real, nítida y consistente en cada servicio. */
+.services-page .catalog-card__visual--photo{
+  background:#f4eefc;
+}
+.services-page .catalog-card__image{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+  object-position:center;
+  image-rendering:auto;
+}
+
+/* En el visor, la fotografía ocupa todo el panel visual sin perder proporción. */
+.service-lightbox__visual--photo{
+  padding:0;
+  background:#170b2a;
+}
+.service-lightbox__visual--photo .catalog-card__image{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+.service-lightbox__visual--photo::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg,rgba(50,0,95,0) 55%,rgba(50,0,95,.16) 100%);
+  pointer-events:none;
+}
+
+/* Mejora visual de los ítems de servicio */
+.services-page .catalog-card__features li::before,
+.service-lightbox__features li::before{
+  background:var(--teal-500);
+  color:#fff;
+}
+.services-page .catalog-card__features li{
+  color:var(--ink-900);
+  font-weight:700;
+}
+
+/* Visor: controles discretos integrados sobre la fotografía. */
+@media (max-width:560px){
+  .service-lightbox__close{
+    width:36px;
+    height:36px;
+    top:10px;
+    right:10px;
+    background:rgba(255,255,255,.72);
+    border-color:rgba(255,255,255,.75);
+  }
+  .service-lightbox__arrow{
+    width:40px;
+    height:40px;
+    top:226px;
+    background:rgba(255,255,255,.72);
+    border-color:rgba(255,255,255,.72);
+  }
+  .service-lightbox__arrow--prev{left:10px;}
+  .service-lightbox__arrow--next{right:10px;}
+}
+
+/* ========================================================================
+   PASO 24 · GALERÍA PREMIUM DE 5 SERVICIOS
+   - Cinco tarjetas altas y simétricas en escritorio.
+   - Imagen protagonista (más de la mitad de la tarjeta).
+   - Hover elegante sin deformar el layout.
+   - Scroll horizontal con snap en móvil/tablet.
+   ======================================================================== */
+.services-page .services-catalog{
+  padding-top:56px;
+  padding-bottom:70px;
+  overflow:hidden;
+}
+
+.services-page .services-catalog__head{
+  margin-bottom:28px;
+}
+
+.services-page .services-gallery{
+  display:block;
+  width:100%;
+  overflow:visible;
+}
+
+.services-page .services-gallery__track{
+  display:grid;
+  grid-template-columns:repeat(5,minmax(0,1fr));
+  gap:18px;
+  width:100%;
+  padding:8px 4px 18px;
+  align-items:stretch;
+  overflow:visible;
+}
+
+.services-page .catalog-card,
+.services-page .catalog-card.catalog-card--featured{
+  position:relative;
+  width:100%;
+  height:680px;
+  min-height:680px;
+  min-width:0;
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+  border:1px solid rgba(109,0,217,.16);
+  border-radius:26px;
+  background:#fff;
+  box-shadow:0 12px 28px rgba(44,18,86,.08);
+  cursor:pointer;
+  transition:transform .28s ease, box-shadow .28s ease, border-color .28s ease, background-color .28s ease;
+}
+
+.services-page .catalog-card:hover,
+.services-page .catalog-card:focus-within{
+  transform:translateY(-8px);
+  border-color:rgba(109,0,217,.42);
+  box-shadow:0 22px 42px rgba(73,18,126,.16);
+}
+
+.services-page .catalog-card::after{
+  content:"";
+  position:absolute;
+  inset:auto 18px 0;
+  height:4px;
+  border-radius:999px 999px 0 0;
+  background:linear-gradient(90deg,var(--violet-700),var(--teal-500));
+  transform:scaleX(.22);
+  transform-origin:center;
+  transition:transform .28s ease;
+}
+
+.services-page .catalog-card:hover::after,
+.services-page .catalog-card:focus-within::after{
+  transform:scaleX(1);
+}
+
+.services-page .catalog-card__visual,
+.services-page .catalog-card--featured .catalog-card__visual{
+  position:relative;
+  height:390px;
+  min-height:390px;
+  flex:0 0 390px;
+  padding:0;
+  overflow:hidden;
+  background:var(--violet-50);
+}
+
+.services-page .catalog-card__visual::after{
+  content:"";
+  position:absolute;
+  inset:auto 0 0;
+  height:28%;
+  background:linear-gradient(180deg,transparent,rgba(34,12,64,.18));
+  pointer-events:none;
+  transition:height .28s ease;
+}
+
+.services-page .catalog-card:hover .catalog-card__visual::after{
+  height:38%;
+}
+
+.services-page .catalog-card__image{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+  object-position:center;
+  transition:transform .5s cubic-bezier(.22,.61,.36,1),filter .35s ease;
+}
+
+.services-page .catalog-card:hover .catalog-card__image{
+  transform:scale(1.055);
+  filter:saturate(1.06) contrast(1.03);
+}
+
+.services-page .catalog-card__body,
+.services-page .catalog-card--featured .catalog-card__body{
+  height:auto;
+  min-height:290px;
+  flex:1 1 auto;
+  display:flex;
+  flex-direction:column;
+  padding:20px 20px 22px;
+  background:#fff;
+}
+
+.services-page .catalog-card__tag{
+  align-self:flex-start;
+  margin-bottom:8px;
+  padding:6px 10px;
+  border-radius:999px;
+  background:var(--violet-50);
+  color:var(--violet-700);
+  font-size:.68rem;
+  font-weight:900;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+}
+
+.services-page .catalog-card h3,
+.services-page .catalog-card--featured h3{
+  margin:0 0 10px;
+  color:var(--violet-900);
+  font-size:1.17rem;
+  line-height:1.18;
+  letter-spacing:-.02em;
+}
+
+.services-page .catalog-card p{
+  margin:0 0 12px;
+  color:var(--ink-700);
+  font-size:.82rem;
+  line-height:1.46;
+}
+
+.services-page .catalog-card__features{
+  display:grid;
+  gap:7px;
+  margin:0 0 16px;
+  padding:0;
+  list-style:none;
+}
+
+.services-page .catalog-card__features li{
+  position:relative;
+  display:grid;
+  grid-template-columns:18px minmax(0,1fr);
+  align-items:start;
+  gap:7px;
+  color:var(--ink-800);
+  font-size:.73rem;
+  font-weight:700;
+  line-height:1.33;
+}
+
+.services-page .catalog-card__features li::before{
+  content:"✓";
+  width:18px;
+  height:18px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  background:var(--teal-100);
+  color:var(--violet-700);
+  font-size:.66rem;
+  font-weight:900;
+}
+
+.services-page .catalog-card__bottom{
+  margin-top:auto;
+  display:flex;
+  align-items:center;
+}
+
+.services-page .catalog-card__action{
+  width:100%;
+  justify-content:center;
+  min-height:44px;
+  border-radius:14px;
+  font-size:.84rem;
+  font-weight:900;
+  box-shadow:none;
+}
+
+.services-page .catalog-card:hover .catalog-card__action{
+  box-shadow:0 10px 20px rgba(109,0,217,.16);
+}
+
+/* Reducimos la distinción anterior de tarjeta destacada: ahora las cinco
+   comparten el mismo lenguaje visual y el hover hace la jerarquía. */
+.services-page .catalog-card--featured{
+  border-color:rgba(109,0,217,.16);
+  box-shadow:0 12px 28px rgba(44,18,86,.08);
+}
+
+.services-page .catalog-card--featured .catalog-card__icon,
+.services-page .catalog-card__icon,
+.services-page .catalog-card__badge{
+  display:none;
+}
+
+/* En pantallas más estrechas, mantenemos la galería horizontal para evitar
+   tarjetas angostas y conservar la sensación de catálogo. */
+@media (max-width:1200px){
+  .services-page .services-gallery__track{
+    grid-template-columns:repeat(3,minmax(250px,1fr));
+  }
+  .services-page .catalog-card,
+  .services-page .catalog-card.catalog-card--featured{
+    height:650px;
+    min-height:650px;
+  }
+  .services-page .catalog-card__visual,
+  .services-page .catalog-card--featured .catalog-card__visual{
+    height:360px;
+    min-height:360px;
+    flex-basis:360px;
+  }
+}
+
+@media (max-width:860px){
+  .services-page .services-catalog{
+    padding-top:46px;
+    padding-bottom:54px;
+  }
+
+  .services-page .services-gallery{
+    overflow-x:auto;
+    overflow-y:visible;
+    scroll-snap-type:x mandatory;
+    scrollbar-width:none;
+    -webkit-overflow-scrolling:touch;
+    padding-inline:6px;
+  }
+
+  .services-page .services-gallery::-webkit-scrollbar{display:none;}
+
+  .services-page .services-gallery__track{
+    display:flex;
+    gap:16px;
+    width:max-content;
+    padding:8px 4px 18px;
+  }
+
+  .services-page .catalog-card,
+  .services-page .catalog-card.catalog-card--featured{
+    flex:0 0 min(78vw,420px);
+    width:min(78vw,420px);
+    height:620px;
+    min-height:620px;
+    scroll-snap-align:start;
+  }
+
+  .services-page .catalog-card__visual,
+  .services-page .catalog-card--featured .catalog-card__visual{
+    height:350px;
+    min-height:350px;
+    flex-basis:350px;
+  }
+
+  .services-page .catalog-card__body,
+  .services-page .catalog-card--featured .catalog-card__body{
+    min-height:270px;
+    padding:18px 18px 20px;
+  }
+
+  .services-page .catalog-card:hover,
+  .services-page .catalog-card:focus-within{
+    transform:none;
+  }
+}
+
+@media (max-width:560px){
+  .services-page .services-catalog__head{
+    margin-bottom:20px;
+  }
+
+  .services-page .catalog-card,
+  .services-page .catalog-card.catalog-card--featured{
+    flex-basis:86vw;
+    width:86vw;
+    height:610px;
+    min-height:610px;
+    border-radius:22px;
+  }
+
+  .services-page .catalog-card__visual,
+  .services-page .catalog-card--featured .catalog-card__visual{
+    height:338px;
+    min-height:338px;
+    flex-basis:338px;
+  }
+
+  .services-page .catalog-card__body,
+  .services-page .catalog-card--featured .catalog-card__body{
+    min-height:272px;
+    padding:17px 17px 18px;
+  }
+
+  .services-page .catalog-card h3,
+  .services-page .catalog-card--featured h3{
+    font-size:1.1rem;
+  }
+
+  .services-page .catalog-card p{
+    font-size:.78rem;
+  }
+
+  .services-page .catalog-card__features li{
+    font-size:.71rem;
+  }
+
+  .services-page .catalog-card__action{
+    min-height:46px;
+  }
+}
+
+/* ========================================================================
+   PASO 24 · PANEL DE ECOGRAFÍA CON FONDO BLANCO
+   ======================================================================== */
+.scan-panel__body{
+  background:#fff;
+  border:1px solid rgba(109,0,217,.08);
+}
+
+.scan-panel__photo{
+  background:#fff;
+  object-fit:contain;
+  object-position:center;
+  mix-blend-mode:multiply;
+}
+
+@media (max-width:860px){
+  .scan-panel__photo{object-fit:contain;}
+}
+
+
+/* Refuerzo de interacción visual: el hover cambia sutilmente el tono sin
+   alterar las dimensiones de las tarjetas. */
+.services-page .catalog-card:hover .catalog-card__body,
+.services-page .catalog-card:focus-within .catalog-card__body{
+  background:linear-gradient(180deg,#fff 0%,#fcf8ff 100%);
+}
+
+.services-page .catalog-card:hover .catalog-card__tag,
+.services-page .catalog-card:focus-within .catalog-card__tag{
+  background:rgba(109,0,217,.10);
+  color:var(--violet-700);
+}
+
+.services-page .catalog-card:hover h3,
+.services-page .catalog-card:focus-within h3{
+  color:var(--violet-700);
+}
+
+@media (prefers-reduced-motion:reduce){
+  .services-page .catalog-card,
+  .services-page .catalog-card__image,
+  .services-page .catalog-card__visual::after,
+  .services-page .catalog-card::after{
+    transition:none;
+  }
+}
+
+
+/* ========================================================================
+   PASO 25 · GALERÍA DE SERVICIOS EN UNA SOLA HILERA
+   - Cinco tarjetas con la misma proporción y ancho legible.
+   - Carrusel horizontal real en desktop, tablet y móvil.
+   - Flechas discretas fuera del contenido de las tarjetas.
+   ======================================================================== */
+.services-page .services-gallery{
+  position:relative;
+  display:grid;
+  grid-template-columns:48px minmax(0,1fr) 48px;
+  align-items:center;
+  gap:12px;
+  width:100%;
+  overflow:visible;
+}
+
+.services-page .services-gallery__viewport{
+  width:100%;
+  min-width:0;
+  overflow-x:auto;
+  overflow-y:hidden;
+  scrollbar-width:none;
+  -ms-overflow-style:none;
+  scroll-behavior:smooth;
+  scroll-snap-type:x proximity;
+  overscroll-behavior-x:contain;
+  border-radius:28px;
+  cursor:grab;
+  touch-action:pan-x;
+}
+.services-page .services-gallery__viewport::-webkit-scrollbar{display:none;}
+.services-page .services-gallery__viewport.is-dragging{cursor:grabbing;scroll-behavior:auto;}
+
+.services-page .services-gallery__track{
+  display:flex !important;
+  flex-wrap:nowrap;
+  align-items:stretch;
+  gap:20px;
+  width:max-content !important;
+  min-width:max-content;
+  padding:8px 4px 18px;
+  overflow:visible;
+}
+
+.services-page .catalog-card,
+.services-page .catalog-card.catalog-card--featured{
+  flex:0 0 320px !important;
+  width:320px !important;
+  min-width:320px !important;
+  height:620px !important;
+  min-height:620px !important;
+  max-height:620px !important;
+  scroll-snap-align:start;
+  overflow:hidden;
+}
+
+.services-page .catalog-card__visual,
+.services-page .catalog-card.catalog-card--featured .catalog-card__visual{
+  height:350px !important;
+  min-height:350px !important;
+  flex:0 0 350px !important;
+}
+
+.services-page .catalog-card__body,
+.services-page .catalog-card.catalog-card--featured .catalog-card__body{
+  min-height:270px !important;
+  height:270px !important;
+  padding:18px 18px 20px !important;
+}
+
+.services-page .catalog-card h3,
+.services-page .catalog-card.catalog-card--featured h3{
+  font-size:1.14rem;
+  line-height:1.2;
+}
+
+.services-page .catalog-card p{
+  font-size:.80rem;
+  line-height:1.42;
+}
+
+.services-page .catalog-card__features{
+  gap:6px;
+  margin-top:8px;
+  margin-bottom:12px;
+}
+
+.services-page .catalog-card__features li{
+  font-size:.71rem;
+  line-height:1.26;
+}
+
+.services-page .catalog-card__bottom{margin-top:auto;}
+
+.services-page .services-gallery__nav{
+  width:48px;
+  height:48px;
+  display:grid;
+  place-items:center;
+  border:1px solid rgba(109,0,217,.20);
+  border-radius:50%;
+  background:#fff;
+  color:var(--violet-700);
+  box-shadow:0 12px 26px rgba(44,18,86,.10);
+  font-size:2rem;
+  line-height:1;
+  cursor:pointer;
+  z-index:5;
+  transition:transform .18s ease,background-color .18s ease,box-shadow .18s ease,opacity .18s ease;
+}
+.services-page .services-gallery__nav:hover:not(:disabled){
+  transform:translateY(-2px);
+  background:var(--violet-50);
+  box-shadow:0 16px 28px rgba(44,18,86,.14);
+}
+.services-page .services-gallery__nav:disabled{opacity:.35;cursor:not-allowed;}
+.services-page .services-gallery__nav span{transform:translateY(-1px);}
+
+@media (max-width:1200px){
+  .services-page .services-gallery{grid-template-columns:44px minmax(0,1fr) 44px;gap:10px;}
+  .services-page .catalog-card,
+  .services-page .catalog-card.catalog-card--featured{
+    flex-basis:300px !important;
+    width:300px !important;
+    min-width:300px !important;
+    height:600px !important;
+    min-height:600px !important;
+    max-height:600px !important;
+  }
+  .services-page .catalog-card__visual,
+  .services-page .catalog-card.catalog-card--featured .catalog-card__visual{
+    height:338px !important;
+    min-height:338px !important;
+    flex-basis:338px !important;
+  }
+  .services-page .catalog-card__body,
+  .services-page .catalog-card.catalog-card--featured .catalog-card__body{
+    height:262px !important;
+    min-height:262px !important;
+  }
+}
+
+@media (max-width:860px){
+  .services-page .services-gallery{grid-template-columns:40px minmax(0,1fr) 40px;gap:8px;}
+  .services-page .services-gallery__nav{width:40px;height:40px;font-size:1.7rem;}
+  .services-page .services-gallery__track{gap:16px;padding-inline:2px 8px;}
+  .services-page .catalog-card,
+  .services-page .catalog-card.catalog-card--featured{
+    flex-basis:min(82vw,380px) !important;
+    width:min(82vw,380px) !important;
+    min-width:min(82vw,380px) !important;
+    height:590px !important;
+    min-height:590px !important;
+    max-height:590px !important;
+  }
+  .services-page .catalog-card__visual,
+  .services-page .catalog-card.catalog-card--featured .catalog-card__visual{
+    height:330px !important;
+    min-height:330px !important;
+    flex-basis:330px !important;
+  }
+  .services-page .catalog-card__body,
+  .services-page .catalog-card.catalog-card--featured .catalog-card__body{
+    height:260px !important;
+    min-height:260px !important;
+    padding:16px 16px 18px !important;
+  }
+}
+
+@media (max-width:560px){
+  .services-page .services-gallery{grid-template-columns:34px minmax(0,1fr) 34px;gap:6px;}
+  .services-page .services-gallery__nav{width:34px;height:34px;font-size:1.5rem;}
+  .services-page .catalog-card,
+  .services-page .catalog-card.catalog-card--featured{
+    flex-basis:calc(100vw - 76px) !important;
+    width:calc(100vw - 76px) !important;
+    min-width:calc(100vw - 76px) !important;
+    height:570px !important;
+    min-height:570px !important;
+    max-height:570px !important;
+    border-radius:22px;
+  }
+  .services-page .catalog-card__visual,
+  .services-page .catalog-card.catalog-card--featured .catalog-card__visual{
+    height:315px !important;
+    min-height:315px !important;
+    flex-basis:315px !important;
+  }
+  .services-page .catalog-card__body,
+  .services-page .catalog-card.catalog-card--featured .catalog-card__body{
+    height:255px !important;
+    min-height:255px !important;
+    padding:15px 15px 17px !important;
+  }
+  .services-page .catalog-card h3,
+  .services-page .catalog-card.catalog-card--featured h3{font-size:1.08rem;}
+  .services-page .catalog-card p{font-size:.77rem;}
+  .services-page .catalog-card__features li{font-size:.69rem;}
+}
+
+/* ========================================================================
+   PASO 25 · ECOGRAFO PROFESIONAL CON FONDO BLANCO REAL
+   Sin película morada: la única superposición es la línea de escaneo.
+   ======================================================================== */
+.scan-panel__image-wrap{
+  position:relative;
+  background:#fff !important;
+  overflow:hidden;
+}
+.scan-panel__image-wrap::after{display:none !important;}
+.scan-panel__photo{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:contain !important;
+  object-position:center;
+  background:#fff;
+  mix-blend-mode:normal !important;
+  filter:none !important;
+}
+.scan-panel__scan-beam{
+  z-index:3;
+  opacity:.95;
+}
+\n/* ========================================================================\n   PASO 26 · GALERÍA FINAL + VISOR REACTIVADO + ESCÁNER LIMPIO\n   - Cinco tarjetas en una sola hilera cuando el ancho lo permite.\n   - Si no caben: carrusel horizontal, nunca segunda fila ni solapamiento.\n   - Alturas legibles y contenido completo.\n   - Visor con botones de Cotizar y Agendar apilados.\n   - Fotografía del ecógrafo limpia, fondo blanco y solo línea de escaneo.\n   ======================================================================== */\n\n.services-page .services-gallery{\n  display:grid !important;\n  grid-template-columns:42px minmax(0,1fr) 42px !important;\n  gap:10px !important;\n  width:100% !important;\n  align-items:center !important;\n}\n\n.services-page .services-gallery__viewport{\n  width:100% !important;\n  min-width:0 !important;\n  overflow-x:auto !important;\n  overflow-y:hidden !important;\n  scrollbar-width:none !important;\n  -ms-overflow-style:none !important;\n  scroll-snap-type:x proximity !important;\n  overscroll-behavior-x:contain !important;\n  cursor:grab !important;\n  touch-action:pan-x !important;\n}\n.services-page .services-gallery__viewport::-webkit-scrollbar{display:none !important;}\n.services-page .services-gallery__viewport.is-dragging{cursor:grabbing !important;}\n\n.services-page .services-gallery__track{\n  display:flex !important;\n  flex-wrap:nowrap !important;\n  align-items:stretch !important;\n  gap:18px !important;\n  width:max-content !important;\n  min-width:100% !important;\n  padding:8px 4px 18px !important;\n}\n\n.services-page .catalog-card,\n.services-page .catalog-card.catalog-card--featured{\n  flex:0 0 272px !important;\n  width:272px !important;\n  min-width:272px !important;\n  height:548px !important;\n  min-height:548px !important;\n  max-height:548px !important;\n  border-radius:22px !important;\n  overflow:hidden !important;\n  scroll-snap-align:start !important;\n}\n\n.services-page .catalog-card__visual,\n.services-page .catalog-card.catalog-card--featured .catalog-card__visual{\n  height:248px !important;\n  min-height:248px !important;\n  flex:0 0 248px !important;\n  padding:0 !important;\n}\n\n.services-page .catalog-card__visual--photo .catalog-card__image{\n  width:100% !important;\n  height:100% !important;\n  object-fit:cover !important;\n  object-position:center !important;\n  display:block !important;\n}\n\n.services-page .catalog-card__visual::before{\n  pointer-events:none !important;\n}\n\n.services-page .catalog-card__body,\n.services-page .catalog-card.catalog-card--featured .catalog-card__body{\n  height:300px !important;\n  min-height:300px !important;\n  padding:17px 18px 18px !important;\n  display:flex !important;\n  flex-direction:column !important;\n  overflow:hidden !important;\n}\n\n.services-page .catalog-card__tag{\n  margin-bottom:7px !important;\n  padding:5px 9px !important;\n  font-size:.66rem !important;\n}\n\n.services-page .catalog-card h3,\n.services-page .catalog-card.catalog-card--featured h3{\n  margin-bottom:7px !important;\n  font-size:1.13rem !important;\n  line-height:1.18 !important;\n  display:-webkit-box !important;\n  -webkit-line-clamp:2 !important;\n  -webkit-box-orient:vertical !important;\n  overflow:hidden !important;\n}\n\n.services-page .catalog-card p{\n  margin-bottom:6px !important;\n  font-size:.79rem !important;\n  line-height:1.42 !important;\n  display:-webkit-box !important;\n  -webkit-line-clamp:3 !important;\n  -webkit-box-orient:vertical !important;\n  overflow:hidden !important;\n}\n\n.services-page .catalog-card__features{\n  gap:5px !important;\n  margin:4px 0 10px !important;\n  overflow:hidden !important;\n}\n.services-page .catalog-card__features li{\n  font-size:.70rem !important;\n  line-height:1.22 !important;\n  display:flex !important;\n  align-items:flex-start !important;\n}\n\n.services-page .catalog-card__bottom{\n  margin-top:auto !important;\n  padding-top:8px !important;\n  border-top:1px solid var(--gray-300) !important;\n}\n.services-page .catalog-card__action{\n  width:100% !important;\n  min-height:44px !important;\n  border-radius:13px !important;\n}\n\n/* Desktop grande: las 5 tarjetas entran en una sola vista, simétricas. */\n@media (min-width:1320px){\n  .services-page .services-gallery{grid-template-columns:34px minmax(0,1fr) 34px !important;}\n  .services-page .services-gallery__track{\n    width:100% !important;\n    min-width:100% !important;\n    justify-content:space-between !important;\n    gap:14px !important;\n  }\n  .services-page .catalog-card,\n  .services-page .catalog-card.catalog-card--featured{\n    flex:1 1 0 !important;\n    width:auto !important;\n    min-width:0 !important;\n    max-width:calc((100% - 56px)/5) !important;\n  }\n}\n\n/* Anchos medios: carrusel, manteniendo tarjetas completas. */\n@media (max-width:1319px) and (min-width:861px){\n  .services-page .catalog-card,\n  .services-page .catalog-card.catalog-card--featured{\n    flex-basis:300px !important;\n    width:300px !important;\n    min-width:300px !important;\n  }\n}\n\n@media (max-width:860px){\n  .services-page .services-gallery{\n    grid-template-columns:36px minmax(0,1fr) 36px !important;\n    gap:6px !important;\n  }\n  .services-page .services-gallery__nav{\n    width:36px !important;\n    height:36px !important;\n    font-size:1.4rem !important;\n  }\n  .services-page .services-gallery__track{gap:14px !important;padding:6px 2px 16px !important;}\n  .services-page .catalog-card,\n  .services-page .catalog-card.catalog-card--featured{\n    flex-basis:min(84vw,360px) !important;\n    width:min(84vw,360px) !important;\n    min-width:min(84vw,360px) !important;\n    height:560px !important;\n    min-height:560px !important;\n    max-height:560px !important;\n  }\n  .services-page .catalog-card__visual,\n  .services-page .catalog-card.catalog-card--featured .catalog-card__visual{\n    height:300px !important;\n    min-height:300px !important;\n    flex-basis:300px !important;\n  }\n  .services-page .catalog-card__body,\n  .services-page .catalog-card.catalog-card--featured .catalog-card__body{\n    height:260px !important;\n    min-height:260px !important;\n    padding:15px 16px 16px !important;\n  }\n}\n\n@media (max-width:560px){\n  .services-page .services-gallery{\n    grid-template-columns:34px minmax(0,1fr) 34px !important;\n  }\n  .services-page .services-gallery__nav{\n    width:34px !important;\n    height:34px !important;\n    font-size:1.3rem !important;\n  }\n  .services-page .catalog-card,\n  .services-page .catalog-card.catalog-card--featured{\n    flex-basis:calc(100vw - 68px) !important;\n    width:calc(100vw - 68px) !important;\n    min-width:calc(100vw - 68px) !important;\n    height:540px !important;\n    min-height:540px !important;\n    max-height:540px !important;\n  }\n  .services-page .catalog-card__visual,\n  .services-page .catalog-card.catalog-card--featured .catalog-card__visual{\n    height:292px !important;\n    min-height:292px !important;\n    flex-basis:292px !important;\n  }\n  .services-page .catalog-card__body,\n  .services-page .catalog-card.catalog-card--featured .catalog-card__body{\n    height:248px !important;\n    min-height:248px !important;\n    padding:14px 15px 15px !important;\n  }\n  .services-page .catalog-card h3,\n  .services-page .catalog-card.catalog-card--featured h3{font-size:1.06rem !important;}\n  .services-page .catalog-card p{font-size:.76rem !important;}\n  .services-page .catalog-card__features li{font-size:.68rem !important;}\n}\n\n/* Visor: dos acciones siempre una encima de la otra, como pidió el diseño final. */\n.service-lightbox__bottom{\n  display:flex !important;\n  flex-direction:column !important;\n  align-items:stretch !important;\n  gap:10px !important;\n  margin-top:auto !important;\n}\n.service-lightbox__bottom .btn{\n  width:100% !important;\n  min-height:48px !important;\n  justify-content:center !important;\n}\n.service-lightbox__quote{\n  display:flex !important;\n  align-items:center !important;\n  justify-content:center !important;\n  gap:9px !important;\n  background:#fff !important;\n}\n\n/* Scanner: blanco auténtico, sin overlay violeta ni blend mode. */\n.scan-panel__body{\n  background:#fff !important;\n  border-radius:var(--radius-md) !important;\n  overflow:hidden !important;\n}\n.scan-panel__image-wrap{\n  background:#fff !important;\n  isolation:isolate !important;\n  opacity:1 !important;\n}\n.scan-panel__image-wrap::after{display:none !important;content:none !important;}\n.scan-panel__photo{\n  background:#fff !important;\n  filter:none !important;\n  mix-blend-mode:normal !important;\n  opacity:1 !important;\n  object-fit:contain !important;\n}\n.scan-panel__scan-beam{\n  mix-blend-mode:normal !important;\n  opacity:.9 !important;\n  z-index:4 !important;\n}\n\n/* El hover solo eleva el panel; nunca altera su altura ni el flujo. */\n.services-page .catalog-card:hover{transform:translateY(-5px) !important;}\n\n@media (prefers-reduced-motion:reduce){\n  .services-page .catalog-card,\n  .services-page .catalog-card__image,\n  .service-lightbox__arrow,\n  .service-lightbox__close{transition:none !important;}\n}\n
+
+/* ========================================================================
+   PASO 27 · GALERÍA COMPACTA + INTERACCIÓN DE PRECISIÓN
+   ======================================================================== */
+.services-page .services-gallery__viewport{
+  overflow-x:auto !important;
+  overflow-y:hidden !important;
+  touch-action:pan-x !important;
+}
+.services-page .services-gallery__track{
+  display:flex !important;
+  flex-wrap:nowrap !important;
+  align-items:stretch !important;
+  gap:16px !important;
+  width:max-content !important;
+  min-width:max-content !important;
+  padding:6px 4px 14px !important;
+}
+.services-page .catalog-card,
+.services-page .catalog-card.catalog-card--featured{
+  flex:0 0 268px !important;
+  width:268px !important;
+  min-width:268px !important;
+  height:530px !important;
+  min-height:530px !important;
+  max-height:530px !important;
+  border-radius:20px !important;
+}
+.services-page .catalog-card__visual,
+.services-page .catalog-card.catalog-card--featured .catalog-card__visual{
+  height:255px !important;
+  min-height:255px !important;
+  flex:0 0 255px !important;
+}
+.services-page .catalog-card__body,
+.services-page .catalog-card.catalog-card--featured .catalog-card__body{
+  height:275px !important;
+  min-height:275px !important;
+  padding:14px 16px 15px !important;
+  overflow:hidden !important;
+}
+.services-page .catalog-card__tag{
+  margin-bottom:6px !important;
+  padding:4px 8px !important;
+  font-size:.62rem !important;
+}
+.services-page .catalog-card h3,
+.services-page .catalog-card.catalog-card--featured h3{
+  margin:0 0 7px !important;
+  font-size:1.06rem !important;
+  line-height:1.18 !important;
+  letter-spacing:-.015em !important;
+  display:block !important;
+  overflow:visible !important;
+}
+.services-page .catalog-card p{
+  margin:0 0 8px !important;
+  font-size:.76rem !important;
+  line-height:1.36 !important;
+  display:block !important;
+  overflow:visible !important;
+}
+.services-page .catalog-card__features{
+  gap:5px !important;
+  margin:2px 0 8px !important;
+  overflow:visible !important;
+}
+.services-page .catalog-card__features li{
+  font-size:.68rem !important;
+  line-height:1.2 !important;
+}
+.services-page .catalog-card__features li::before{
+  width:16px !important;
+  height:16px !important;
+  font-size:.62rem !important;
+}
+.services-page .catalog-card__bottom{
+  margin-top:auto !important;
+  padding-top:8px !important;
+}
+.services-page .catalog-card__action{
+  min-height:42px !important;
+  border-radius:12px !important;
+  font-size:.79rem !important;
+}
+
+@media (min-width:1500px){
+  .services-page .services-gallery{
+    grid-template-columns:32px minmax(0,1fr) 32px !important;
+    gap:8px !important;
+  }
+  .services-page .services-gallery__track{
+    width:100% !important;
+    min-width:100% !important;
+    justify-content:space-between !important;
+    gap:12px !important;
+  }
+  .services-page .catalog-card,
+  .services-page .catalog-card.catalog-card--featured{
+    flex:1 1 0 !important;
+    width:auto !important;
+    min-width:0 !important;
+    max-width:none !important;
+  }
+}
+
+@media (max-width:900px){
+  .services-page .services-gallery{
+    grid-template-columns:32px minmax(0,1fr) 32px !important;
+    gap:6px !important;
+  }
+  .services-page .services-gallery__track{gap:12px !important;}
+  .services-page .catalog-card,
+  .services-page .catalog-card.catalog-card--featured{
+    flex-basis:min(78vw,330px) !important;
+    width:min(78vw,330px) !important;
+    min-width:min(78vw,330px) !important;
+    height:515px !important;
+    min-height:515px !important;
+    max-height:515px !important;
+  }
+  .services-page .catalog-card__visual,
+  .services-page .catalog-card.catalog-card--featured .catalog-card__visual{
+    height:265px !important;
+    min-height:265px !important;
+    flex-basis:265px !important;
+  }
+  .services-page .catalog-card__body,
+  .services-page .catalog-card.catalog-card--featured .catalog-card__body{
+    height:250px !important;
+    min-height:250px !important;
+    padding:13px 15px 14px !important;
+  }
+}
+
+@media (max-width:560px){
+  .services-page .services-gallery{grid-template-columns:30px minmax(0,1fr) 30px !important;}
+  .services-page .services-gallery__nav{width:30px !important;height:30px !important;font-size:1.2rem !important;}
+  .services-page .catalog-card,
+  .services-page .catalog-card.catalog-card--featured{
+    flex-basis:calc(100vw - 62px) !important;
+    width:calc(100vw - 62px) !important;
+    min-width:calc(100vw - 62px) !important;
+    height:515px !important;
+    min-height:515px !important;
+    max-height:515px !important;
+  }
+  .services-page .catalog-card__visual,
+  .services-page .catalog-card.catalog-card--featured .catalog-card__visual{
+    height:265px !important;
+    min-height:265px !important;
+    flex-basis:265px !important;
+  }
+  .services-page .catalog-card__body,
+  .services-page .catalog-card.catalog-card--featured .catalog-card__body{
+    height:250px !important;
+    min-height:250px !important;
+  }
+  .services-page .catalog-card h3,
+  .services-page .catalog-card.catalog-card--featured h3{font-size:1.02rem !important;}
+  .services-page .catalog-card p{font-size:.74rem !important;}
+  .services-page .catalog-card__features li{font-size:.67rem !important;}
+}
+
+/* For touch-capable computers: ordinary mouse clicks remain native and open the lightbox. */
+@media (pointer:fine){
+  .services-page .services-gallery__viewport{cursor:grab !important;}
+  .services-page .services-gallery__viewport.is-dragging{cursor:grabbing !important;}
+}
+
+/* Scanner: preserve the pure-white product photo and only the animated beam. */
+.scan-panel__image-wrap{background:#fff !important;}
+.scan-panel__photo{background:#fff !important;opacity:1 !important;filter:none !important;mix-blend-mode:normal !important;}
+.scan-panel__image-wrap::after{display:none !important;content:none !important;}
+
+/* ========================================================================
+   PASO 28 · GALERÍA DE SERVICIOS REEQUILIBRADA
+   Tarjetas iguales, compactas y con contenido sin solapamientos.
+   ======================================================================== */
+.services-page .services-gallery__track{
+  display:flex !important;
+  flex-wrap:nowrap !important;
+  align-items:stretch !important;
+  gap:16px !important;
+  width:max-content !important;
+  min-width:max-content !important;
+  padding:6px 4px 14px !important;
+}
+
+.services-page .catalog-card,
+.services-page .catalog-card.catalog-card--featured{
+  flex:0 0 250px !important;
+  width:250px !important;
+  min-width:250px !important;
+  max-width:250px !important;
+  height:500px !important;
+  min-height:500px !important;
+  max-height:500px !important;
+  display:flex !important;
+  flex-direction:column !important;
+  overflow:hidden !important;
+  border-radius:20px !important;
+}
+
+.services-page .catalog-card__visual,
+.services-page .catalog-card.catalog-card--featured .catalog-card__visual{
+  height:232px !important;
+  min-height:232px !important;
+  flex:0 0 232px !important;
+  overflow:hidden !important;
+}
+
+.services-page .catalog-card__body,
+.services-page .catalog-card.catalog-card--featured .catalog-card__body{
+  flex:1 1 auto !important;
+  min-height:0 !important;
+  height:auto !important;
+  padding:14px 15px 15px !important;
+  display:flex !important;
+  flex-direction:column !important;
+  overflow:hidden !important;
+}
+
+.services-page .catalog-card__tag{
+  width:max-content;
+  margin:0 0 6px !important;
+  padding:4px 8px !important;
+  font-size:.62rem !important;
+  line-height:1.1 !important;
+}
+
+.services-page .catalog-card h3,
+.services-page .catalog-card.catalog-card--featured h3{
+  margin:0 0 7px !important;
+  font-size:1.05rem !important;
+  line-height:1.18 !important;
+  letter-spacing:-.015em !important;
+}
+
+.services-page .catalog-card p{
+  margin:0 0 9px !important;
+  font-size:.75rem !important;
+  line-height:1.34 !important;
+}
+
+.services-page .catalog-card__features{
+  display:flex !important;
+  flex-direction:column !important;
+  gap:5px !important;
+  margin:0 0 10px !important;
+  padding:0 !important;
+}
+
+.services-page .catalog-card__features li{
+  display:grid !important;
+  grid-template-columns:16px minmax(0,1fr) !important;
+  gap:6px !important;
+  align-items:start !important;
+  font-size:.68rem !important;
+  line-height:1.22 !important;
+  overflow:visible !important;
+}
+
+.services-page .catalog-card__features li::before{
+  width:16px !important;
+  height:16px !important;
+  font-size:.6rem !important;
+}
+
+.services-page .catalog-card__bottom{
+  margin-top:auto !important;
+  padding-top:6px !important;
+  flex-shrink:0 !important;
+}
+
+.services-page .catalog-card__action{
+  width:100% !important;
+  min-height:42px !important;
+  padding-inline:12px !important;
+  border-radius:12px !important;
+  font-size:.78rem !important;
+}
+
+@media (min-width:1500px){
+  .services-page .catalog-card,
+  .services-page .catalog-card.catalog-card--featured{
+    flex:0 0 250px !important;
+    width:250px !important;
+    min-width:250px !important;
+    max-width:250px !important;
+  }
+  .services-page .services-gallery__track{
+    width:max-content !important;
+    min-width:max-content !important;
+    justify-content:flex-start !important;
+  }
+}
+
+@media (max-width:1200px){
+  .services-page .services-gallery__track{gap:12px !important;}
+  .services-page .catalog-card,
+  .services-page .catalog-card.catalog-card--featured{
+    flex-basis:238px !important;
+    width:238px !important;
+    min-width:238px !important;
+    max-width:238px !important;
+    height:485px !important;
+    min-height:485px !important;
+    max-height:485px !important;
+  }
+  .services-page .catalog-card__visual,
+  .services-page .catalog-card.catalog-card--featured .catalog-card__visual{
+    height:220px !important;
+    min-height:220px !important;
+    flex-basis:220px !important;
+  }
+}
+
+@media (max-width:860px){
+  .services-page .catalog-card,
+  .services-page .catalog-card.catalog-card--featured{
+    flex-basis:min(78vw,330px) !important;
+    width:min(78vw,330px) !important;
+    min-width:min(78vw,330px) !important;
+    max-width:min(78vw,330px) !important;
+    height:500px !important;
+    min-height:500px !important;
+    max-height:500px !important;
+  }
+  .services-page .catalog-card__visual,
+  .services-page .catalog-card.catalog-card--featured .catalog-card__visual{
+    height:248px !important;
+    min-height:248px !important;
+    flex-basis:248px !important;
+  }
+  .services-page .catalog-card__body,
+  .services-page .catalog-card.catalog-card--featured .catalog-card__body{
+    padding:14px 16px 15px !important;
+  }
+  .services-page .catalog-card h3,
+  .services-page .catalog-card.catalog-card--featured h3{font-size:1.08rem !important;}
+  .services-page .catalog-card p{font-size:.77rem !important;line-height:1.36 !important;}
+  .services-page .catalog-card__features li{font-size:.7rem !important;line-height:1.24 !important;}
+}
+
+@media (max-width:560px){
+  .services-page .services-gallery{grid-template-columns:30px minmax(0,1fr) 30px !important;gap:6px !important;}
+  .services-page .services-gallery__track{gap:12px !important;padding:4px 2px 12px !important;}
+  .services-page .catalog-card,
+  .services-page .catalog-card.catalog-card--featured{
+    flex-basis:calc(100vw - 70px) !important;
+    width:calc(100vw - 70px) !important;
+    min-width:calc(100vw - 70px) !important;
+    max-width:calc(100vw - 70px) !important;
+    height:485px !important;
+    min-height:485px !important;
+    max-height:485px !important;
+    border-radius:20px !important;
+  }
+  .services-page .catalog-card__visual,
+  .services-page .catalog-card.catalog-card--featured .catalog-card__visual{
+    height:236px !important;
+    min-height:236px !important;
+    flex-basis:236px !important;
+  }
+  .services-page .catalog-card__body,
+  .services-page .catalog-card.catalog-card--featured .catalog-card__body{
+    padding:13px 14px 14px !important;
+  }
+  .services-page .catalog-card h3,
+  .services-page .catalog-card.catalog-card--featured h3{font-size:1.02rem !important;}
+  .services-page .catalog-card p{font-size:.74rem !important;line-height:1.32 !important;margin-bottom:8px !important;}
+  .services-page .catalog-card__features{gap:4px !important;margin-bottom:8px !important;}
+  .services-page .catalog-card__features li{font-size:.67rem !important;line-height:1.2 !important;}
+  .services-page .catalog-card__action{min-height:40px !important;font-size:.76rem !important;}
+}
+
+/* ========================================================================
+   PASO 29 · CORRECCIÓN DEFINITIVA DE ESPACIADO EN TARJETAS
+   - La descripción conserva su altura real y nunca comparte línea con los checks.
+   - El contenido utiliza un flujo de cuatro bloques: tag, título, descripción/
+     beneficios y CTA.
+   - Se eliminan clamps heredados que estaban cortando el párrafo y provocando
+     el solapamiento visual observado.
+   ======================================================================== */
+.services-page .catalog-card__body,
+.services-page .catalog-card.catalog-card--featured .catalog-card__body{
+  box-sizing:border-box !important;
+  display:grid !important;
+  grid-template-rows:auto auto auto 1fr auto !important;
+  align-content:start !important;
+  gap:0 !important;
+  height:auto !important;
+  min-height:0 !important;
+  max-height:none !important;
+  overflow:hidden !important;
+}
+
+.services-page .catalog-card__tag{
+  grid-row:1 !important;
+  align-self:start !important;
+  margin:0 0 6px !important;
+}
+
+.services-page .catalog-card h3,
+.services-page .catalog-card.catalog-card--featured h3{
+  grid-row:2 !important;
+  display:block !important;
+  max-height:none !important;
+  overflow:visible !important;
+  -webkit-line-clamp:unset !important;
+  -webkit-box-orient:initial !important;
+  white-space:normal !important;
+  margin:0 0 8px !important;
+}
+
+.services-page .catalog-card p{
+  grid-row:3 !important;
+  display:block !important;
+  max-height:none !important;
+  height:auto !important;
+  overflow:visible !important;
+  -webkit-line-clamp:unset !important;
+  -webkit-box-orient:initial !important;
+  white-space:normal !important;
+  margin:0 0 12px !important;
+  line-height:1.38 !important;
+}
+
+.services-page .catalog-card__features{
+  grid-row:4 !important;
+  align-self:start !important;
+  display:flex !important;
+  flex-direction:column !important;
+  width:100% !important;
+  min-height:0 !important;
+  height:auto !important;
+  max-height:none !important;
+  overflow:visible !important;
+  gap:6px !important;
+  margin:0 !important;
+  padding:0 !important;
+}
+
+.services-page .catalog-card__features li{
+  display:grid !important;
+  grid-template-columns:16px minmax(0,1fr) !important;
+  width:100% !important;
+  min-height:18px !important;
+  height:auto !important;
+  overflow:visible !important;
+  white-space:normal !important;
+  line-height:1.25 !important;
+  margin:0 !important;
+}
+
+.services-page .catalog-card__bottom{
+  grid-row:5 !important;
+  align-self:end !important;
+  width:100% !important;
+  margin-top:14px !important;
+  padding-top:8px !important;
+  flex-shrink:0 !important;
+}
+
+.services-page .catalog-card__action{
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  width:100% !important;
+}
+
+@media (max-width:1200px){
+  .services-page .catalog-card__body,
+  .services-page .catalog-card.catalog-card--featured .catalog-card__body{
+    padding:14px 15px 15px !important;
+  }
+  .services-page .catalog-card p{font-size:.77rem !important;}
+  .services-page .catalog-card__features li{font-size:.69rem !important;}
+}
+
+@media (max-width:860px){
+  .services-page .catalog-card__body,
+  .services-page .catalog-card.catalog-card--featured .catalog-card__body{
+    padding:14px 16px 15px !important;
+  }
+  .services-page .catalog-card h3,
+  .services-page .catalog-card.catalog-card--featured h3{
+    font-size:1.06rem !important;
+    line-height:1.18 !important;
+  }
+  .services-page .catalog-card p{
+    font-size:.76rem !important;
+    line-height:1.36 !important;
+  }
+  .services-page .catalog-card__features li{
+    font-size:.69rem !important;
+    line-height:1.23 !important;
+  }
+}
+
+@media (max-width:560px){
+  .services-page .catalog-card__body,
+  .services-page .catalog-card.catalog-card--featured .catalog-card__body{
+    padding:13px 14px 14px !important;
+  }
+  .services-page .catalog-card p{
+    font-size:.74rem !important;
+    line-height:1.34 !important;
+  }
+  .services-page .catalog-card__features{
+    gap:5px !important;
+  }
+  .services-page .catalog-card__features li{
+    font-size:.68rem !important;
+    line-height:1.22 !important;
+  }
+}
