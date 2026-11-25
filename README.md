@@ -1,21 +1,20 @@
-# VET-SCAN — Paso 28
+# VET-SCAN · Paso 32
 
-## Cambios
-- Nueva fotografía realista y diferenciada para cada uno de los cinco servicios.
-- Consulta a domicilio con veterinario masculino y mascota pequeña.
-- Ecografía abdominal con escena de ecografía en mascota.
-- Vacunación con veterinario masculino y cachorro.
-- Laboratorio con toma profesional de muestra.
-- Procedimientos básicos con atención a gato.
-- Tarjetas de servicios compactas, iguales y sin solapamientos de contenido.
-- Descripciones e ítems ajustados para lectura completa.
-- Galería horizontal con desplazamiento en anchos que no permiten mostrar las cinco tarjetas.
-- Mantiene el visor/lightbox, botones de Cotizar y Agendar, navegación con flechas, teclado y toque.
+Proyecto listo para GitHub Pages y dominio `vetscan.com.co`.
 
-## Estructura
-- index.html
-- servicios.html
-- css/styles.css
-- js/main.js
-- assets/services/*.jpg
-- assets/branding/*
+## Cambios de esta versión
+- Vista `servicios.html` organizada en una cuadrícula real de **3 columnas × 2 filas** para los seis servicios.
+- Se conserva el servicio **Certificado para viaje** como sexta tarjeta.
+- En tablet, la cuadrícula pasa a 2 columnas; en móvil, a 1 columna.
+- Se desactiva el desplazamiento de carrusel solo en la vista `servicios.html`; el visor ampliado de cada tarjeta continúa activo.
+- Se actualizan las versiones de CSS y JavaScript (`v=32`) para evitar caché de estilos antiguos.
+
+## Archivos principales
+- `index.html`
+- `servicios.html`
+- `css/styles.css` y `styles.css`
+- `js/main.js` y `main.js`
+- `assets/branding/` y `assets/services/`
+- `CNAME`
+
+Al subir a GitHub, mantener esta estructura en la raíz del repositorio.

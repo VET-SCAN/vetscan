@@ -391,7 +391,7 @@ if (document.readyState === 'loading') {
 
 /* ========================================================================== 
    VET-SCAN · Vista servicios
-   - Galería visual en cuadrícula responsive
+   - Galería visual en cuadrícula responsive de seis servicios
    - Selección directa desde ?service=
    - Selector de Servicios / Productos
    - Mantiene la navegación global y demás funcionalidades existentes
@@ -399,6 +399,9 @@ if (document.readyState === 'loading') {
 
 
 function initServicesGalleryCarousel(){
+  // La vista servicios utiliza una cuadrícula fija 3 x 2, no un carrusel.
+  // El visor ampliado se inicializa por separado y sigue activo para las seis tarjetas.
+  if (document.body.classList.contains('services-page')) return;
   const gallery = document.querySelector('[data-services-gallery]');
   if (!gallery) return;
   const viewport = gallery.querySelector('[data-gallery-viewport]');
@@ -901,6 +904,8 @@ function initServicesLightbox() {
     consulta: 'consulta-domicilio',
     vacunacion: 'vacunacion',
     laboratorio: 'laboratorio',
+    certificado: 'certificado-viaje',
+    viaje: 'certificado-viaje',
     desparasitacion: 'procedimientos-basicos',
     presion: 'consulta-domicilio',
     escaner: 'ecografia-abdominal'

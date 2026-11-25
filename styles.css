@@ -5692,3 +5692,654 @@ h3,h4{letter-spacing:-0.015em;}
     line-height:1.22 !important;
   }
 }
+
+
+/* ========================================================================
+   PASO 30 · GALERÍA 6 SERVICIOS · LOGO RESPONSIVE · REDES SOCIALES
+   ======================================================================== */
+.header{
+  --header-h:82px;
+}
+.header__inner{height:var(--header-h);}
+.header .logo{gap:14px;}
+.header .logo__image{width:68px;height:68px;flex-basis:68px;}
+.header .logo__word{font-size:1.72rem;letter-spacing:-.052em;}
+.topbar__links a[aria-label*="Instagram"],
+.topbar__links a[aria-label*="Facebook"]{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:28px;
+  height:28px;
+  border-radius:50%;
+}
+.topbar__links a[aria-label*="Instagram"]:hover,
+.topbar__links a[aria-label*="Facebook"]:hover{
+  background:rgba(255,255,255,.10);
+}
+
+/* Seis servicios: cuadrícula 3 × 2 en escritorio. */
+.services-page .services-gallery{
+  display:block;
+  width:100%;
+}
+.services-page .services-gallery > .services-gallery__nav,
+.services-page .services-gallery > .services-gallery__nav--prev,
+.services-page .services-gallery > .services-gallery__nav--next{
+  display:none !important;
+}
+.services-page .services-gallery__viewport{
+  overflow:visible;
+  scroll-snap-type:none;
+  cursor:default;
+  touch-action:auto;
+}
+.services-page .services-gallery__track{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  grid-template-rows:repeat(2,auto);
+  gap:24px;
+  width:100%;
+  padding:4px 2px 16px;
+}
+.services-page .catalog-card,
+.services-page .catalog-card--featured{
+  grid-column:auto !important;
+  grid-row:auto !important;
+  width:100%;
+  height:520px;
+  min-height:520px;
+  border-radius:22px;
+}
+.services-page .catalog-card__visual--photo,
+.services-page .catalog-card--featured .catalog-card__visual{
+  height:242px;
+  min-height:242px;
+  flex:0 0 242px;
+  padding:0;
+}
+.services-page .catalog-card__body,
+.services-page .catalog-card--featured .catalog-card__body{
+  height:278px;
+  min-height:278px;
+  padding:17px 18px 15px;
+  overflow:visible;
+}
+.services-page .catalog-card h3,
+.services-page .catalog-card--featured h3{
+  font-size:1.18rem;
+  line-height:1.16;
+  margin-bottom:6px;
+  min-height:0;
+}
+.services-page .catalog-card p{
+  font-size:.79rem;
+  line-height:1.45;
+  margin:0 0 10px;
+  min-height:0;
+  overflow:visible;
+  display:block;
+}
+.services-page .catalog-card__features{
+  margin-top:0;
+  gap:7px;
+  min-height:0;
+}
+.services-page .catalog-card__features li{
+  font-size:.72rem;
+  line-height:1.28;
+  min-height:18px;
+}
+.services-page .catalog-card__bottom{
+  margin-top:auto;
+  padding-top:11px;
+}
+.services-page .catalog-card__action{
+  min-height:42px;
+  padding:10px 16px;
+  font-size:.82rem;
+  width:100%;
+}
+.services-page .catalog-card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 18px 42px rgba(43,30,77,.15);
+}
+
+@media (max-width:1024px){
+  .header .logo__image{width:64px;height:64px;flex-basis:64px;}
+  .header .logo__word{font-size:1.58rem;}
+  .services-page .services-gallery__track{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:20px;
+  }
+  .services-page .catalog-card,
+  .services-page .catalog-card--featured{
+    height:510px;
+    min-height:510px;
+  }
+  .services-page .catalog-card__visual--photo,
+  .services-page .catalog-card--featured .catalog-card__visual{
+    height:232px;
+    min-height:232px;
+    flex-basis:232px;
+  }
+  .services-page .catalog-card__body,
+  .services-page .catalog-card--featured .catalog-card__body{
+    height:278px;
+    min-height:278px;
+  }
+}
+
+@media (max-width:860px){
+  .header{--header-h:76px;}
+  .header__inner{height:var(--header-h);}
+  .header__inner > .logo{
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    gap:10px;
+  }
+  .header .logo__image{width:56px;height:56px;flex-basis:56px;}
+  .header .logo__word{font-size:1.28rem;}
+  .services-page .services-gallery__track{
+    grid-template-columns:1fr;
+    gap:18px;
+  }
+  .services-page .catalog-card,
+  .services-page .catalog-card--featured{
+    height:500px;
+    min-height:500px;
+  }
+  .services-page .catalog-card__visual--photo,
+  .services-page .catalog-card--featured .catalog-card__visual{
+    height:238px;
+    min-height:238px;
+    flex-basis:238px;
+  }
+  .services-page .catalog-card__body,
+  .services-page .catalog-card--featured .catalog-card__body{
+    height:262px;
+    min-height:262px;
+    padding:16px 17px 15px;
+  }
+}
+
+@media (max-width:560px){
+  .header .logo__image{width:52px;height:52px;flex-basis:52px;}
+  .header .logo__word{font-size:1.18rem;}
+  .services-page .catalog-card,
+  .services-page .catalog-card--featured{
+    height:495px;
+    min-height:495px;
+  }
+  .services-page .catalog-card__visual--photo,
+  .services-page .catalog-card--featured .catalog-card__visual{
+    height:228px;
+    min-height:228px;
+    flex-basis:228px;
+  }
+  .services-page .catalog-card__body,
+  .services-page .catalog-card--featured .catalog-card__body{
+    height:267px;
+    min-height:267px;
+    padding:15px 16px 14px;
+  }
+  .services-page .catalog-card h3,
+  .services-page .catalog-card--featured h3{font-size:1.12rem;}
+  .services-page .catalog-card p{font-size:.77rem;line-height:1.42;}
+  .services-page .catalog-card__features li{font-size:.70rem;line-height:1.25;}
+}
+
+/* Los enlaces sociales del pie y la barra superior son botones reales. */
+.footer__col a[href*="instagram.com"],
+.footer__col a[href*="facebook.com"],
+.footer__col a[href*="wa.me"]{font-weight:700;}
+
+/* ========================================================================
+   PASO 31 · GALERÍA 3 × 2 PARA LOS 6 SERVICIOS
+   - Tres tarjetas por fila en escritorio.
+   - Segunda fila con los tres servicios restantes.
+   - Sin desplazamiento horizontal en la vista de servicios.
+   - En tablet pasa a 2 columnas y en móvil a 1.
+   ======================================================================== */
+.services-page .services-gallery {
+  display:block;
+  width:100%;
+}
+
+.services-page .services-gallery__nav {
+  display:none !important;
+}
+
+.services-page .services-gallery__viewport {
+  width:100%;
+  overflow:visible;
+  scroll-snap-type:none;
+  cursor:default;
+  touch-action:auto;
+  border-radius:0;
+}
+
+.services-page .services-gallery__track {
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  grid-auto-rows:520px;
+  gap:22px;
+  width:100%;
+  padding:4px 2px 14px;
+}
+
+.services-page .catalog-card,
+.services-page .catalog-card--featured {
+  width:auto;
+  min-width:0;
+  height:520px;
+  min-height:520px;
+  grid-column:span 1;
+  grid-row:span 1;
+  border-radius:22px;
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+}
+
+.services-page .catalog-card__visual,
+.services-page .catalog-card--featured .catalog-card__visual {
+  height:210px;
+  min-height:210px;
+  flex:0 0 210px;
+  padding:0;
+  display:block;
+  position:relative;
+}
+
+.services-page .catalog-card__image {
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+}
+
+.services-page .catalog-card__body,
+.services-page .catalog-card--featured .catalog-card__body {
+  height:auto;
+  min-height:0;
+  flex:1;
+  padding:18px 18px 16px;
+}
+
+.services-page .catalog-card__tag {
+  margin-bottom:7px;
+  padding:5px 9px;
+  font-size:.66rem;
+  line-height:1.15;
+}
+
+.services-page .catalog-card h3,
+.services-page .catalog-card--featured h3 {
+  margin:0 0 8px;
+  font-size:1.16rem;
+  line-height:1.2;
+  min-height:2.4em;
+}
+
+.services-page .catalog-card p {
+  margin:0;
+  font-size:.78rem;
+  line-height:1.43;
+  color:var(--ink-700);
+  min-height:4.3em;
+}
+
+.services-page .catalog-card__features {
+  gap:6px;
+  margin:12px 0 0;
+  min-height:66px;
+}
+
+.services-page .catalog-card__features li {
+  gap:8px;
+  font-size:.69rem;
+  line-height:1.25;
+}
+
+.services-page .catalog-card__features li::before {
+  width:17px;
+  height:17px;
+  flex-basis:17px;
+  font-size:.58rem;
+}
+
+.services-page .catalog-card__bottom {
+  margin-top:auto;
+  padding-top:11px;
+  min-height:45px;
+  gap:10px;
+}
+
+.services-page .catalog-card__action {
+  width:100%;
+  justify-content:center;
+  min-height:40px;
+  padding:9px 14px;
+  font-size:.77rem;
+}
+
+@media (max-width: 1024px) {
+  .services-page .services-gallery__track {
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    grid-auto-rows:510px;
+    gap:20px;
+  }
+
+  .services-page .catalog-card,
+  .services-page .catalog-card--featured {
+    height:510px;
+    min-height:510px;
+    grid-column:span 1;
+  }
+
+  .services-page .catalog-card__visual,
+  .services-page .catalog-card--featured .catalog-card__visual {
+    height:205px;
+    min-height:205px;
+    flex-basis:205px;
+  }
+}
+
+@media (max-width: 640px) {
+  .services-page .services-gallery__track {
+    grid-template-columns:1fr;
+    grid-auto-rows:auto;
+    gap:18px;
+    padding:2px 0 12px;
+  }
+
+  .services-page .catalog-card,
+  .services-page .catalog-card--featured {
+    width:100%;
+    height:auto;
+    min-height:0;
+    grid-column:span 1;
+  }
+
+  .services-page .catalog-card__visual,
+  .services-page .catalog-card--featured .catalog-card__visual {
+    height:230px;
+    min-height:230px;
+    flex-basis:230px;
+  }
+
+  .services-page .catalog-card__body,
+  .services-page .catalog-card--featured .catalog-card__body {
+    min-height:285px;
+    padding:18px 18px 16px;
+  }
+
+  .services-page .catalog-card h3,
+  .services-page .catalog-card--featured h3 {
+    font-size:1.24rem;
+    min-height:auto;
+  }
+
+  .services-page .catalog-card p {
+    font-size:.86rem;
+    line-height:1.5;
+    min-height:auto;
+  }
+
+  .services-page .catalog-card__features {
+    min-height:auto;
+    margin-top:14px;
+  }
+
+  .services-page .catalog-card__features li {
+    font-size:.76rem;
+  }
+}
+
+
+/* ========================================================================
+   PASO 32 · CUADRÍCULA DEFINITIVA DE SERVICIOS 3 × 2
+   La página de catálogo no debe heredar las reglas antiguas del carrusel.
+   En escritorio: 3 columnas y exactamente 2 filas para los 6 servicios.
+   En tablet: 2 columnas. En móvil: 1 columna.
+   ======================================================================== */
+body.services-page main .services-gallery {
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+}
+
+body.services-page main .services-gallery__nav {
+  display: none !important;
+}
+
+body.services-page main .services-gallery__viewport {
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  height: auto !important;
+  overflow: visible !important;
+  border-radius: 0 !important;
+  scroll-snap-type: none !important;
+  touch-action: auto !important;
+  cursor: default !important;
+}
+
+body.services-page main .services-gallery__track {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  grid-template-rows: repeat(2, 540px) !important;
+  grid-auto-flow: row !important;
+  grid-auto-rows: 540px !important;
+  align-items: stretch !important;
+  justify-items: stretch !important;
+  gap: 24px !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  padding: 8px 2px 18px !important;
+  margin: 0 !important;
+  box-sizing: border-box !important;
+}
+
+body.services-page main .services-gallery__track > .catalog-card,
+body.services-page main .services-gallery__track > .catalog-card.catalog-card--featured {
+  display: flex !important;
+  flex: none !important;
+  flex-direction: column !important;
+  grid-column: auto !important;
+  grid-row: auto !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  height: 540px !important;
+  min-height: 540px !important;
+  max-height: 540px !important;
+  margin: 0 !important;
+  overflow: hidden !important;
+  border-radius: 22px !important;
+  box-sizing: border-box !important;
+}
+
+body.services-page main .services-gallery__track > .catalog-card > .catalog-card__visual,
+body.services-page main .services-gallery__track > .catalog-card.catalog-card--featured > .catalog-card__visual,
+body.services-page main .services-gallery__track > .catalog-card > .catalog-card__visual--photo {
+  display: block !important;
+  position: relative !important;
+  flex: 0 0 232px !important;
+  width: 100% !important;
+  height: 232px !important;
+  min-height: 232px !important;
+  max-height: 232px !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+}
+
+body.services-page main .services-gallery__track .catalog-card__image {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+}
+
+body.services-page main .services-gallery__track > .catalog-card > .catalog-card__body,
+body.services-page main .services-gallery__track > .catalog-card.catalog-card--featured > .catalog-card__body {
+  display: flex !important;
+  flex: 1 1 auto !important;
+  flex-direction: column !important;
+  width: 100% !important;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  padding: 18px 19px 17px !important;
+  overflow: visible !important;
+  box-sizing: border-box !important;
+}
+
+body.services-page main .services-gallery__track .catalog-card__tag {
+  align-self: flex-start !important;
+  flex: 0 0 auto !important;
+  margin: 0 0 7px !important;
+  line-height: 1.2 !important;
+}
+
+body.services-page main .services-gallery__track .catalog-card h3 {
+  display: block !important;
+  flex: 0 0 auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  margin: 0 0 7px !important;
+  overflow: visible !important;
+  font-size: 1.16rem !important;
+  line-height: 1.24 !important;
+  -webkit-line-clamp: unset !important;
+}
+
+body.services-page main .services-gallery__track .catalog-card p {
+  display: block !important;
+  flex: 0 0 auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  margin: 0 !important;
+  overflow: visible !important;
+  font-size: .83rem !important;
+  line-height: 1.48 !important;
+  -webkit-line-clamp: unset !important;
+}
+
+body.services-page main .services-gallery__track .catalog-card__features {
+  display: flex !important;
+  flex: 1 1 auto !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+  gap: 8px !important;
+  min-height: 0 !important;
+  margin: 13px 0 10px !important;
+  padding: 0 !important;
+}
+
+body.services-page main .services-gallery__track .catalog-card__features li {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 8px !important;
+  min-height: 19px !important;
+  margin: 0 !important;
+  font-size: .76rem !important;
+  line-height: 1.35 !important;
+  white-space: normal !important;
+  overflow: visible !important;
+}
+
+body.services-page main .services-gallery__track .catalog-card__features li::before {
+  flex: 0 0 17px !important;
+  width: 17px !important;
+  height: 17px !important;
+  margin-top: 1px !important;
+}
+
+body.services-page main .services-gallery__track .catalog-card__bottom {
+  display: flex !important;
+  flex: 0 0 auto !important;
+  width: 100% !important;
+  min-height: 46px !important;
+  margin: auto 0 0 !important;
+  padding: 11px 0 0 !important;
+  border-top: 1px solid var(--gray-300) !important;
+}
+
+body.services-page main .services-gallery__track .catalog-card__action {
+  display: flex !important;
+  width: 100% !important;
+  min-height: 42px !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: .82rem !important;
+}
+
+@media (max-width: 1050px) {
+  body.services-page main .services-gallery__track {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    grid-template-rows: none !important;
+    grid-auto-rows: 530px !important;
+    gap: 20px !important;
+  }
+  body.services-page main .services-gallery__track > .catalog-card,
+  body.services-page main .services-gallery__track > .catalog-card.catalog-card--featured {
+    height: 530px !important;
+    min-height: 530px !important;
+    max-height: 530px !important;
+  }
+  body.services-page main .services-gallery__track > .catalog-card > .catalog-card__visual,
+  body.services-page main .services-gallery__track > .catalog-card.catalog-card--featured > .catalog-card__visual,
+  body.services-page main .services-gallery__track > .catalog-card > .catalog-card__visual--photo {
+    flex-basis: 220px !important;
+    height: 220px !important;
+    min-height: 220px !important;
+    max-height: 220px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  body.services-page main .services-gallery__track {
+    grid-template-columns: minmax(0, 1fr) !important;
+    grid-template-rows: none !important;
+    grid-auto-rows: auto !important;
+    gap: 18px !important;
+    padding: 4px 0 16px !important;
+  }
+  body.services-page main .services-gallery__track > .catalog-card,
+  body.services-page main .services-gallery__track > .catalog-card.catalog-card--featured {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+  }
+  body.services-page main .services-gallery__track > .catalog-card > .catalog-card__visual,
+  body.services-page main .services-gallery__track > .catalog-card.catalog-card--featured > .catalog-card__visual,
+  body.services-page main .services-gallery__track > .catalog-card > .catalog-card__visual--photo {
+    flex-basis: auto !important;
+    height: clamp(205px, 58vw, 270px) !important;
+    min-height: clamp(205px, 58vw, 270px) !important;
+    max-height: none !important;
+  }
+  body.services-page main .services-gallery__track > .catalog-card > .catalog-card__body,
+  body.services-page main .services-gallery__track > .catalog-card.catalog-card--featured > .catalog-card__body {
+    flex: 1 1 auto !important;
+    padding: 18px 18px 17px !important;
+  }
+  body.services-page main .services-gallery__track .catalog-card h3 {
+    font-size: 1.16rem !important;
+  }
+  body.services-page main .services-gallery__track .catalog-card p {
+    font-size: .86rem !important;
+    line-height: 1.5 !important;
+  }
+  body.services-page main .services-gallery__track .catalog-card__features li {
+    font-size: .78rem !important;
+    line-height: 1.4 !important;
+  }
+}
