@@ -18,3 +18,8 @@ Proyecto listo para GitHub Pages y dominio `vetscan.com.co`.
 - `CNAME`
 
 Al subir a GitHub, mantener esta estructura en la raíz del repositorio.
+
+## Paso 33
+- Enlaces de Instagram y Facebook actualizados a los perfiles proporcionados.
+- Imagen realista diferenciada añadida al servicio Certificado para viaje en assets/services/certificado-viaje.jpg.
+- Caché de CSS y JavaScript actualizada a v=33.
